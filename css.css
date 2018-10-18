@@ -1,0 +1,48 @@
+.chatBody  div {
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin: 0px 10px 0px 6px;
+    border-radius: 5px;
+    line-height: 30px;
+    font-size: 14px;
+    background: #CCC
+} 
+
+.chat{
+    margin: auto;
+    width : 800px;
+    height: 600px;
+}
+
+.chatBody {
+    width: 800px;
+    height: 600px;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+.cus:nth-child(odd) {
+    align-self: flex-end;
+}
+
+.cus:nth-child(even) {
+    align-self: flex-start;
+}
+
+.input {
+    width: 800px;
+    height: 30px;
+    display: flex;
+}
+.input-field{
+    flex: 1;
+}
+
+.but {
+    background: rgb(231, 231, 231)
+}

@@ -1,0 +1,9 @@
+Now, I have only set following message and response pair:
+message: hello              response: Hi, there, how can I help?
+message: 666                response: cool!
+message: how are you?       response: awesome
+message: what can you do?   response: I can talk to you
+message: else               response: sorry, I can't understand
+
+here is my s3 url:http://forchatbot.s3-website-us-east-1.amazonaws.com/
+API KEY: "X-Api-Key": "ULWGhZU9di3ZNELXYJXdBwJY22E5xPS5z5ghwKCh"
