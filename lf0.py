@@ -5,7 +5,7 @@ def lambda_handler(event, context):
     response1 = client.post_text(
         botName='RestaurantBooking',
         botAlias='$LATEST',
-        userId='Ximing',
+        userId='xxxxx',
         inputText= event['input']
     )
 
