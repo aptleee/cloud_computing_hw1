@@ -1,12 +1,3 @@
-"""
-This sample demonstrates an implementation of the Lex Code Hook Interface
-in order to serve a sample bot which manages orders for flowers.
-Bot, Intent, and Slot models which are compatible with this sample can be found in the Lex Console
-as part of the 'OrderFlowers' template.
-
-For instructions on how to set up and test this bot, as well as additional samples,
-visit the Lex Getting Started documentation http://docs.aws.amazon.com/lex/latest/dg/getting-started.html.
-"""
 import boto3
 import json
 def dispatch(intent_request):
