@@ -1,2 +1,1 @@
-# cloud_computing_hw1
-
+it' s a dining concierge asistant deployed on aws
