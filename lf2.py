@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     # receive message from sqs   #
     ##############################
     sqs = boto3.resource('sqs')
-    queue = sqs.Queue('https://sqs.us-east-1.amazonaws.com/230951356722/queue1-CC')
+    queue = sqs.Queue('')
 
     for message in queue.receive_messages(MaxNumberOfMessages=10):
         body = json.loads(message.body)
@@ -24,7 +24,7 @@ def lambda_handler(event, context):
         # call yelp api and get three restaurants #
         ###########################################
         url = 'https://api.yelp.com/v3/businesses/search?term=food&location='+location+'&categories='+food+'&open_at='+str(dt)+'&sort_by=best_match&limit=5'
-        h = {'Authorization': 'Bearer aSB_Dw8u3N5PEPoLXYyTJSuU-8idY7UsCBL_ggrKLGtiKLRhJttvmBZaOnEcgarLTu2x9C5y3shzaewMABidsPbQC7otSFC-VRWf0abv8_T-rRcHnSwtv-SN5fPlW3Yx'}
+        h = {'Authorization': ''}
         response = get(url, headers=h)
         response = json.loads(response.text)
         if len(response["businesses"]) == 0:
