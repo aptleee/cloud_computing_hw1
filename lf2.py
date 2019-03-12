@@ -5,9 +5,8 @@ from datetime import datetime
 
 def lambda_handler(event, context):
 
-    ##############################
-    # receive message from sqs   #
-    ##############################
+    # ------------------receive message from sqs------------- #
+    
     sqs = boto3.resource('sqs')
     queue = sqs.Queue('')
 
@@ -20,9 +19,9 @@ def lambda_handler(event, context):
         dtp = datetime(int(date[0]), int(date[1]), int(date[2]), int(time[0]), int(time[1])) 
         dt = int(dtp.timestamp())
     
-        ###########################################
-        # call yelp api and get three restaurants #
-        ###########################################
+  
+        # ------call yelp api and get three restaurants--------- #
+       
         url = 'https://api.yelp.com/v3/businesses/search?term=food&location='+location+'&categories='+food+'&open_at='+str(dt)+'&sort_by=best_match&limit=5'
         h = {'Authorization': ''}
         response = get(url, headers=h)
@@ -44,16 +43,15 @@ def lambda_handler(event, context):
                 ", 3. " + name3 + ", located at " + loc3 + "." + \
                 " Enjoy your meal!"
                 
-        #########################################
-        # send message                          #
-        #########################################     
+     
+        # ------------- send message ------------- #
+       
         sns = boto3.client('sns')
         response2 =  sns.publish(PhoneNumber=phoneNumber, Message=smsMessage)
     
-        #########################################
-        # put the record in dynamoDB            #
-        #########################################
-        dyn = boto3.client('dynamodb')
+      
+        # ------------- put the record in dynamoDB --------------- #
+       
         response1 = dyn.put_item(
         TableName='Bigtable',
         Item={
